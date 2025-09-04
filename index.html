@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoHe Autohuolto – Nopea, reilu ja luotettava autohuolto Keravalla</title>
+  <meta name="description" content="MoHe Autohuolto – Nopea, reilu ja luotettava autohuolto Keravalla. Huollot, diagnostiikka, jarrut, ilmastointi, renkaat ja katsastuspalvelut. Soita tai varaa aika!" />
+  <meta property="og:title" content="MoHe Autohuolto – Kerava" />
+  <meta property="og:description" content="Ystävällinen palvelu, selkeä hinnoittelu. Soita tai varaa aika jo tänään." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fi_FI" />
+  <meta property="og:image" content="./assets/logo.png" />
+  <meta name="theme-color" content="#ffb300"/>
+  <link rel="icon" href="./assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "MoHe Autohuolto",
+    "description": "Nopea, reilu ja luotettava autohuolto Keravalla. Ystävällinen palvelu, selkeä hinnoittelu.",
+    "image": ["./assets/logo.png"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Isokiventie 17, Halli A",
+      "addressLocality": "Kerava",
+      "postalCode": "04250",
+      "addressCountry": "FI"
+    },
+    "telephone": "+358503637961",
+    "url": "https://www.autohuoltomohe.fi",
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"00:00","closes":"23:59","description":"La sopimuksesta"}
+    ],
+    "priceRange": "€€",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <!-- ======= Header / Nav ======= -->
+  <header aria-label="Päänavigaatio">
+    <div class="container nav" role="navigation">
+      <a href="#hero" class="brand" aria-label="Etusivulle">
+        <img src="./assets/logo.png" alt="MoHe Autohuolto logo" />
+        <span>MoHe Autohuolto</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Päänavigaatio – työpöytä">
+        <ul>
+          <li><a href="#hero">Etusivu</a></li>
+          <li><a href="#services">Palvelut</a></li>
+          <li><a href="#pricing">Hinnasto</a></li>
+          <li><a href="#booking">Varaa aika</a></li>
+          <li><a href="#testimonials">Arviot</a></li>
+          <li><a href="#gallery">Galleria</a></li>
+          <li><a href="#about">Meistä</a></li>
+          <li><a href="#contact">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile menu button (hidden on desktop) -->
+  <button class="menu-btn" id="menuToggle" aria-label="Avaa valikko" aria-expanded="false">
+  <span></span>
+</button>
+
+<nav class="desktop-nav" aria-label="Päänavigaatio – työpöytä">…</nav>
+
+<div class="mobile-nav" id="mobileNav" aria-label="Päänavigaatio – mobiili">
+  <ul>
+    <li><a href="#hero">Etusivu</a></li>
+    <li><a href="#services">Palvelut</a></li>
+    <li><a href="#pricing">Hinnasto</a></li>
+    <li><a href="#booking">Varaa aika</a></li>
+    <li><a href="#testimonials">Arviot</a></li>
+    <li><a href="#gallery">Galleria</a></li>
+    <li><a href="#about">Meistä</a></li>
+    <li><a href="#contact">Yhteystiedot</a></li>
+  </ul>
+</div>
+
+  <!-- ======= Hero ======= -->
+  <section id="hero" aria-label="Hero / aloitus">
+    <div class="bg" aria-hidden="true"></div>
+    <div class="container hero-inner reveal">
+      <div class="kicker">Keravan 1. autohuolto</div>
+      <h1 class="title">Tervetuloa MoHe Autohuoltoon! </h1>
+      <p class="subtitle">Ystävällinen palvelu, selkeä hinnoittelu. Pidämme autosi kunnossa – ilman yllätyksiä.</p>
+      <div class="hero-ctas row" role="group" aria-label="Toiminnot">
+        <a class="btn btn-accent" href="tel:+358503637961" data-ripple>Soita</a>
+        <a class="btn btn-outline" href="#booking" data-ripple>Varaa aika</a>
+        <a class="btn btn-ghost" href="#contact" data-ripple>Sijainti</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Services + Pricing (combined) ======= -->
+<section id="services" class="section alt" aria-label="Palvelut ja hinnat">
+  <!-- keep old #pricing anchor working -->
+  <span id="pricing" style="position:relative; top:-100px"></span>
+
+  <div class="container reveal">
+    <h2>Palvelut & hinnat</h2>
+    <p class="lead">Huollot ja korjaukset kaikkiin merkkeihin – sovitussa ajassa ja sovittuun hintaan.</p>
+
+    <!-- ==== PRICED SERVICES (exact matches) ==== -->
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🛢️</span><h3>Öljynvaihtotyö</h3></div>
+  <p class="muted">Moottoriöljy ja suodattimet autosi mukaan.</p>
+  <div class="price-badge">Alk. 40 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🧪</span><h3>Kuntotarkastus</h3></div>
+  <p class="muted">Nopea yleis­tarkastus ajonvarmuuden varmistamiseksi.</p>
+  <div class="price-badge">35 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">📑</span><h3>Katsastustarkastus</h3></div>
+  <p class="muted">Valmistelu katsastusta varten.</p>
+  <div class="price-badge">30 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🌬️</span><h3>Ilmastointihuolto</h3></div>
+  <p class="muted">Diagnoosi, täyttö ja huolto.</p>
+  <div class="price-badge">60 € + aineet</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🔎</span><h3>Vikakoodien luku</h3></div>
+  <p class="muted">Testerillä vikakoodien luku ja analyysi.</p>
+  <div class="price-badge">Alk. 35 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🔁</span><h3>Huoltovalon nollaus</h3></div>
+  <p class="muted">Huolto­ilmoituksen kuittaus.</p>
+  <div class="price-badge">15 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🛞</span><h3>Renkaiden vaihto</h3></div>
+  <p class="muted">Kauden renkaiden vaihto autoon.</p>
+  <div class="price-badge">25 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🩹</span><h3>Renkaan paikkaus</h3></div>
+  <p class="muted">Pistoreikien paikkaus.</p>
+  <div class="price-badge">Alk. 15 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">⚖️</span><h3>Rengastyöt: irrotus + asennus + tasapainotus</h3></div>
+  <p class="muted">Vanteilta irrotus ja asennus sekä tasapainotus.</p>
+  <div class="price-badge">Alk. 70 €</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🧰</span><h3>Huollot & korjaukset (tuntityö)</h3></div>
+  <p class="muted">Kaikki merkit – sovitussa ajassa ja hintassa.</p>
+  <div class="price-badge">68 € / h</div>
+</article>
+
+<!-- ==== OTHER SERVICES (keep, no fixed price) ==== -->
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🧰</span><h3>Määräaikaishuollot</h3></div>
+  <p class="muted">Valmistajan ohjelman mukaan.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🛠️</span><h3>Jarrujen huolto</h3></div>
+  <p class="muted">Tarkastus ja korjaukset.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">📦</span><h3>Pakoputkistotyöt</h3></div>
+  <p class="muted">Korjaukset ja vaihdot.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">⛓️</span><h3>Jakopääremontit</h3></div>
+  <p class="muted">Vaihdot ohjeiden mukaan.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">⚙️</span><h3>Kytkinremontit</h3></div>
+  <p class="muted">Luistot ja viat kuntoon.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🛢️</span><h3>Vaihteiston öljynvaihdot</h3></div>
+  <p class="muted">Manuaali & automaatti.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🔋</span><h3>Akun vaihto</h3></div>
+  <p class="muted">Nopea ja varma.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">🧷</span><h3>Hitsaustyöt</h3></div>
+  <p class="muted">Pienet korjaukset.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+<article class="card svc" role="listitem">
+  <div class="row"><span class="icon">✅</span><h3>Jälkikatsastustyöt</h3></div>
+  <p class="muted">Korjaukset hylsyn jälkeen.</p>
+  <div class="price-badge">Kysy tarjous!</div>
+</article>
+
+
+    <p class="muted" style="margin-top:10px">Hinnat esimerkkejä – vahvistamme tarjouksen autosi mukaan.</p>
+  </div>
+</section>
+
+
+  <!-- ======= Booking ======= -->
+  <section id="booking" class="section alt" aria-label="Ajanvaraus">
+    <div class="container reveal">
+      <h2>Varaa aika</h2>
+      <p class="lead">Kerro mitä tarvitset – palaamme vahvistuksen kanssa pian.</p>
+
+      <form id="bookingForm" class="fs-form" action="https://formspree.io/f/xdklolqb" method="POST" target="_top" novalidate aria-describedby="bookingHelp">
+        <input type="hidden" name="_subject" value="Uusi ajanvarauspyyntö – MoHe Autohuolto" />
+
+        <div class="field">
+          <label for="name">Nimi *</label>
+          <input id="name" name="name" type="text" required placeholder="Etunimi Sukunimi" />
+        </div>
+        <div class="field">
+          <label for="phone">Puhelin *</label>
+          <input id="phone" name="phone" type="tel" required placeholder="050 363 79 61" pattern="[+0-9\s-]{6,}" />
+        </div>
+        <div class="field">
+            <label for="email">Sähköposti *</label>
+            <input id="email" name="email" type="email" required placeholder="Info@autohuoltomohe.fi" />
+        </div>
+
+        <div class="field">
+          <label for="reg">Rekisterinumero *</label>
+          <input id="reg" name="reg" type="text" required placeholder="ABC-123" pattern="[A-Za-zÅÄÖåäö]{2,3}-?[A-Za-zÅÄÖåäö0-9]{1,3}" title="Muoto esim. ABC-123" />
+        </div>
+        <div class="field">
+          <label for="service">Palvelu *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Valitse palvelu</option>
+            <option>Määräaikaishuolto</option>
+            <option>Vianhaku & diagnoosi</option>
+            <option>Rengastyöt</option>
+            <option>Jarruhuolto</option>
+            <option>Ilmastointihuolto</option>
+            <option>Pakoputkistotyöt</option>
+            <option>Jakopääremontti</option>
+            <option>Kytkinremontti</option>
+            <option>Vikakoodien luku</option>
+            <option>Vaihteiston öljynvaihto</option>
+            <option>Akun vaihto</option>
+            <option>Hitsaustyöt</option>
+            <option>Katsastustarkastus</option>
+            <option>Jälkikatsastustyöt</option>
+            <option>Muu</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Lisätiedot</label>
+          <textarea id="message" name="message" rows="4" placeholder="Auton malli, toivomukset…"></textarea>
+        </div>
+
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <div class="row">
+          <button class="btn btn-accent" type="submit" data-ripple>Lähetä pyyntö</button>
+          <a class="btn btn-outline" href="tel:+358503637961" data-ripple>Soita mieluummin</a>
+        </div>
+        <p id="bookingHelp" class="muted">* Pakolliset kentät. Lähetys ei vielä vahvista aikaa.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======= Testimonials ======= -->
+  <section id="testimonials" class="section" aria-label="Asiakasarviot">
+    <div class="container reveal">
+      <h2>Asiakkaat kertovat</h2>
+      <h3>Lisää palautteista AutoJerryn sivuilla! Kilpailutathan hintasi sieltäpäin myös!</h3>
+      <div class="carousel" id="testimonialCarousel" aria-live="polite">
+        <article class="card t-card"><p>"Nopea renkaanvaihto ja selkeä hinta. Palvelu ystävällistä – tulen uudestaan!"</p><p class="muted">– Hanna, Kerava</p></article>
+        <article class="card t-card"><p>"Diagnostiikka hoitui heti. Sain tarkat ohjeet ja korjaus sovittiin saman tien."</p><p class="muted">– Petri, Sipoo</p></article>
+        <article class="card t-card"><p>"Perusteellinen vian korjaus, nopea toimitus, ammattimainen ote huoltoon, kiitettävä+."</p><p class="muted">– Kari Pakkinen</p></article>
+        <article class="card t-card"><p>"Kaikki sujui hyvin ja auto tuli kuntoon. Korjaamolta oltiin heti yhteydessä vianetsinnän jälkeen ja kerrottiin uusi hinta-arvio, huolto sujui nopeasti. Asiallinen ja hyvä palvelu 😊"</p><p class="muted">– Jenni, Opel Corsa</p></article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Gallery ======= -->
+  <section id="gallery" class="section alt" aria-label="Galleria">
+    <div class="container reveal">
+      <h2>Tunnelmia hallilta</h2>
+      <p class="lead">Siistit tilat, nykyaikaiset työkalut ja tarkka työnjälki.</p>
+      <div class="gallery" id="galleryGrid">
+        <a href="/assets/korjaamo1.jpg"><img alt="Mekaanikko työssään" src="/assets/korjaamo1.jpg"/></a>
+        
+        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1600&auto=format&fit=crop"><img alt="Työkaluseinä" src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=800&auto=format&fit=crop"/></a>
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"><img alt="Auto ja työkalut" src="/assets/korjaamo2.jpg"/></a>
+        <a href="https://images.unsplash.com/photo-1570071677470-c04398af73ca?q=80&w=1600&auto=format&fit=crop"><img alt="Huoltotila" src="https://images.unsplash.com/photo-1570071677470-c04398af73ca?q=80&w=800&auto=format&fit=crop"/></a>
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"><img alt="Auto ja työkalut" src="/assets/hero.png"/></a>
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"><img alt="Auto ja työkalut" src="/assets/korjaamo3.jpg"/></a>
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"><img alt="Auto ja työkalut" src="/assets/korjaamo4.jpg"/></a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= About ======= -->
+  <section id="about" class="section" aria-label="Meistä">
+    <div class="container reveal">
+      <h2>MoHe Autohuolto pähkinänkuoressa</h2>
+      <p class="lead">Paikallinen autokorjaamo Keravalla. Teemme työn niin kuin sen itsekin haluaisimme: selkeästi, nopeasti ja laadukkaasti. 
+        <br>- Maysam & Milad</p>
+      <div class="stats">
+        <div class="stat"><div class="num">10+ vuotta</div><div class="label">kokemusta</div></div>
+        <div class="stat"><div class="num">1000+ autoa</div><div class="label">huollettu vuosittain</div></div>
+        <div class="stat"><div class="num">98%</div><div class="label">suosittelee</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Contact ======= -->
+  <section id="contact" class="section alt" aria-label="Yhteystiedot">
+    <div class="container reveal">
+      <h2>Yhteystiedot</h2>
+      <div class="contact-grid">
+        <div>
+          <p><strong>Osoite:</strong> Isokiventie 17, Halli A, 04250 Kerava</p>
+          <p><strong>Puhelin:</strong> <a href="tel:+358503637961">050 363 79 61</a></p>
+          <p><strong>Sähköposti:</strong> <a href="mailto:Info@autohuoltomohe.fi">Info@autohuoltomohe.fi</a></p>
+          <p><strong>Aukioloajat:</strong> Ma–Pe 09:00–17:00, La-Su suljettu</p>
+          <div class="row" style="margin-top:10px">
+            <a class="btn btn-accent" href="tel:+358503637961" data-ripple>Soita</a>
+            <a class="btn btn-outline" href="#booking" data-ripple>Varaa aika</a>
+            <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://maps.google.com/?q=Isokiventie+17,+Halli+A,+04250+Kerava" data-ripple>Sijainti</a>
+          </div>
+          <p class="muted" style="margin-top:10px">Tervetuloa – pihassa on helppo pysäköidä.</p>
+        </div>
+        <div>
+          <iframe class="map" title="MoHe Autohuolto kartalla" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=Isokiventie+17,+Halli+A,+04250+Kerava&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section" role="contentinfo">
+    <div class="container center">
+      <p><strong>MoHe Autohuolto</strong> • Isokiventie 17, Halli A, 04250 Kerava</p>
+      <p class="muted">Aukioloajat: Ma–Pe 09:00–17:00, La-Su suljettu</p>
+      <p class="muted">© <span id="year"></span> MoHe Autohuolto. Kaikki oikeudet pidätetään.</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite">Kiitos! Pyyntösi on vastaanotettu. Palaamme ajanvahvistuksen kanssa pian.</div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Kuvien katselu">
+    <button class="lb-close" id="lbClose" aria-label="Sulje">✕</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Edellinen">◀</button>
+    <img id="lbImg" alt="Galleria kuva" src=""/>
+    <button class="lb-next" id="lbNext" aria-label="Seuraava">▶</button>
+  </div>
+
+  <!-- Your JS -->
+  <script src="./js/script.js" defer></script>
+</body>
+</html>

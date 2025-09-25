@@ -183,22 +183,65 @@ input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 4px rgba(2
 .hidden{display:none}
 
 /* Mobile fixes: two-row header + chip nav and better anchor offset */
-@media (max-width:780px){
-  :root{ --nav-h:72px; }
-  .nav{flex-wrap:wrap; height:auto; padding:8px 0 4px; gap:8px}
-  .brand{flex:1 0 100%}
-  .desktop-nav{width:100%}
-  .desktop-nav ul{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    gap:.5rem;
-    padding:0 20px 8px;
-    margin:0 -20px;
+/* === SINGLE-ROW MOBILE HEADER (hamburger right, no gray bar) === */
+@media (max-width: 900px){
+  :root{ --nav-h: 64px; }
+
+  header{
+    position: sticky;           /* always visible */
+    top: 0;
+    z-index: 1000;
+    background: #fff;           /* solid to match drawer */
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    backdrop-filter: none;      /* remove blur color shift */
   }
-  .desktop-nav a{white-space:nowrap}
-  section{scroll-margin-top:128px}
+
+  .nav{
+    height: var(--nav-h);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* brand left, burger right */
+    gap: 12px;
+    flex-wrap: nowrap;                /* keep a single row */
+  }
+
+  .desktop-nav{ display: none !important; } /* hide desktop links */
+
+  .brand{ flex: 0 0 auto; display:flex; align-items:center; gap:10px; }
+
+  .cta-row{ margin-left: auto; display: flex; } /* pushes burger to right */
+
+  .menu-btn{
+    display: inline-flex !important;
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff;
+  }
+
+  /* Drawer: fixed under header; not visible when closed (no extra space) */
+  .mobile-nav{
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    z-index: 1001;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    transform: translateY(-120%);     /* hidden */
+    transition: transform .25s ease;
+    padding: 10px 16px 14px;
+  }
+  .mobile-nav.open{ transform: translateY(0); }
+
+  .mobile-nav ul{
+    display: grid; gap: 8px; margin: 0; padding: 0; list-style: none;
+  }
+  .mobile-nav a{
+    display:block; padding:12px 14px; border-radius:10px; font-weight:600;
+  }
 }
+
 @media (max-width:640px){
   .brand img{max-height:32px}
   .brand span{font-size:1.05rem}
@@ -307,7 +350,7 @@ input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 4px rgba(2
 /* --- Global mobile fixes --- */
 html, body { max-width: 100%; overflow-x: hidden; }             /* stop sideways scroll */
 .container { padding-inline: 16px; }                             /* consistent page padding */
-header .nav { padding-inline: 16px; }                            /* same padding in header */
+header .nav { padding-inline: 1px; }                            /* same padding in header */
 
 /* Safe, deeper hero overlay already in place. Tighten hero inner spacing on small screens */
 @media (max-width: 640px){

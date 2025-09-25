@@ -34,7 +34,7 @@ const toast = document.getElementById('toast');
 if (form) {
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
-    const required = ['name','phone','email','service','reg'];
+    const required = ['name','phone','email','mileage','service','reg'];
     for (const id of required) {
       const el = form.querySelector('#' + id);
       if (!el || !el.value) { el && el.focus(); el && el.reportValidity && el.reportValidity(); return; }

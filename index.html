@@ -54,15 +54,17 @@
         <img src="./assets/logo.png" alt="MoHe Autohuolto logo" />
         <span>MoHe Autohuolto Oy</span>
       </a>
+
+      <button class="menu-btn" id="menuToggle" aria-label="Avaa valikko" aria-expanded="false">
+        <span></span>
+      </button>
       <nav class="desktop-nav" aria-label="Päänavigaatio – työpöytä">
         <ul>
           <li><a href="#hero">Etusivu</a></li>
           <li><a href="#services">Palvelut</a></li>
-          <li><a href="#pricing">Hinnasto</a></li>
           <li><a href="#booking">Varaa aika</a></li>
           <li><a href="#testimonials">Arviot</a></li>
           <li><a href="#gallery">Galleria</a></li>
-          <li><a href="#about">Meistä</a></li>
           <li><a href="#contact">Yhteystiedot</a></li>
         </ul>
       </nav>
@@ -70,21 +72,16 @@
   </header>
 
   <!-- Mobile menu button (hidden on desktop) -->
-  <button class="menu-btn" id="menuToggle" aria-label="Avaa valikko" aria-expanded="false">
-  <span></span>
-</button>
+  
 
-<nav class="desktop-nav" aria-label="Päänavigaatio – työpöytä">…</nav>
 
 <div class="mobile-nav" id="mobileNav" aria-label="Päänavigaatio – mobiili">
   <ul>
     <li><a href="#hero">Etusivu</a></li>
     <li><a href="#services">Palvelut</a></li>
-    <li><a href="#pricing">Hinnasto</a></li>
     <li><a href="#booking">Varaa aika</a></li>
     <li><a href="#testimonials">Arviot</a></li>
     <li><a href="#gallery">Galleria</a></li>
-    <li><a href="#about">Meistä</a></li>
     <li><a href="#contact">Yhteystiedot</a></li>
   </ul>
 </div>
@@ -113,112 +110,66 @@
     <h2>Palvelut & hinnat</h2>
     <p class="lead">Huollot ja korjaukset kaikkiin merkkeihin – sovitussa ajassa ja sovittuun hintaan.</p>
 
+
     <!-- ==== PRICED SERVICES (exact matches) ==== -->
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🛢️</span><h3>Öljynvaihtotyö</h3></div>
-  <p class="muted">Moottoriöljy ja suodattimet autosi mukaan.</p>
-  <div class="price-badge">Alk. 40 €</div>
-</article>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🧪</span><h3>Kuntotarkastus</h3></div>
-  <p class="muted">Nopea yleis­tarkastus ajonvarmuuden varmistamiseksi.</p>
-  <div class="price-badge">35 €</div>
-</article>
+<div class="svc-featured">
+  <article class="card svc-mini">
+    <div class="row"><span class="icon">🛢️</span><h3>Öljynvaihtotyö</h3></div>
+    <div class="price-badge">Alk. 40 €</div>
 
+  </article>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🌬️</span><h3>Ilmastointihuolto</h3></div>
-  <p class="muted">Diagnoosi, täyttö ja huolto.</p>
-  <div class="price-badge">60 € + aineet</div>
-</article>
+  <article class="card svc-mini">
+    <div class="row"><span class="icon">🛞</span><h3>Renkaiden vaihto</h3></div>
+    <div class="price-badge">25 €</div>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🔎</span><h3>Vikakoodien luku</h3></div>
-  <p class="muted">Testerillä vikakoodien luku ja analyysi.</p>
-  <div class="price-badge">Alk. 35 €</div>
-</article>
+  </article>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🔁</span><h3>Huoltovalon nollaus</h3></div>
-  <p class="muted">Huolto­ilmoituksen kuittaus.</p>
-  <div class="price-badge">15 €</div>
-</article>
+  <article class="card svc-mini">
+    <div class="row"><span class="icon">🌬️</span><h3>Ilmastointihuolto</h3></div>
+    <div class="price-badge">60 € + aineet</div>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🛞</span><h3>Renkaiden vaihto</h3></div>
-  <p class="muted">Kauden renkaiden vaihto autoon.</p>
-  <div class="price-badge">25 €</div>
-</article>
+  </article>
 
+  <article class="card svc-mini">
+    <div class="row"><span class="icon">🔎</span><h3>Vikakoodien luku</h3></div>
+    <div class="price-badge">Alk. 35 €</div>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">⚖️</span><h3>Rengastyöt: irrotus + asennus + tasapainotus</h3></div>
-  <p class="muted">Vanteilta irrotus ja asennus sekä tasapainotus.</p>
-  <div class="price-badge">Alk. 70 €</div>
-</article>
+  </article>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🧰</span><h3>Huollot & korjaukset (tuntityö)</h3></div>
-  <p class="muted">Kaikki merkit – sovitussa ajassa ja hintassa.</p>
-  <div class="price-badge">68 € / h</div>
-</article>
+  <article class="card svc-mini">
+    <div class="row"><span class="icon">🧪</span><h3>Kuntotarkastus</h3></div>
+    <div class="price-badge">35 €</div>
+  </article>
 
-<!-- ==== OTHER SERVICES (keep, no fixed price) ==== -->
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🧰</span><h3>Määräaikaishuollot</h3></div>
-  <p class="muted">Valmistajan ohjelman mukaan.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
+  <article class="card svc-mini">
+    <div class="row"><span class="icon">🧰
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🛠️</span><h3>Jarrujen huolto</h3></div>
-  <p class="muted">Tarkastus ja korjaukset.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
+    </span><h3>Huollot/Korjaukset</h3></div>
+    <div class="price-badge">68 € / h</div>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">📦</span><h3>Pakoputkistotyöt</h3></div>
-  <p class="muted">Korjaukset ja vaihdot.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
+  </article>
+</div>
 
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">⛓️</span><h3>Jakopääremontit</h3></div>
-  <p class="muted">Vaihdot ohjeiden mukaan.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
-
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">⚙️</span><h3>Kytkinremontit</h3></div>
-  <p class="muted">Luistot ja viat kuntoon.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
-
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🛢️</span><h3>Vaihteiston öljynvaihdot</h3></div>
-  <p class="muted">Manuaali & automaatti.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
-
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🔋</span><h3>Akun vaihto</h3></div>
-  <p class="muted">Nopea ja varma.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
-
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">🧷</span><h3>Hitsaustyöt</h3></div>
-  <p class="muted">Pienet korjaukset.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
-
-<article class="card svc" role="listitem">
-  <div class="row"><span class="icon">✅</span><h3>Jälkikatsastustyöt</h3></div>
-  <p class="muted">Korjaukset hylsyn jälkeen.</p>
-  <div class="price-badge">Kysy tarjous!</div>
-</article>
-
+<!-- All services (compact, collapsible) -->
+<details class="svc-more">
+  <summary>Muut palvelut</summary>
+    <div class="svc-more__content">
+  <ul class="svc-list" role="list">
+    <li><span class="icon">🧪</span><span>Kuntotarkastus</span><span class="price-badge">35 €</span></li>
+    <li><span class="icon">🧰</span><span>Määräaikaishuollot</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">🛠️</span><span>Jarrujen huolto</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">📦</span><span>Pakoputkistotyöt</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">⛓️</span><span>Jakopääremontit</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">⚙️</span><span>Kytkinremontit</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">🛢️</span><span>Vaihteiston öljynvaihdot</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">🔋</span><span>Akun vaihto</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">🧷</span><span>Hitsaustyöt</span><span class="price-badge">Kysy tarjous</span></li>
+    <li><span class="icon">✅</span><span>Jälkikatsastustyöt</span><span class="price-badge">Kysy tarjous</span></li>
+  </ul>
+    </div>
+</details>
 
     <p class="muted" style="margin-top:10px">Hinnat esimerkkejä – vahvistamme tarjouksen autosi mukaan.</p>
   </div>

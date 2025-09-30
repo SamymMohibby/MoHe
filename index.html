@@ -22,29 +22,36 @@
   
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "MoHe Autohuolto",
-    "description": "Nopea, reilu ja luotettava autohuolto Keravalla. Ystävällinen palvelu, selkeä hinnoittelu.",
-    "image": ["./assets/logo.png"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Isokiventie 17, Halli A",
-      "addressLocality": "Kerava",
-      "postalCode": "04250",
-      "addressCountry": "FI"
-    },
-    "telephone": "+358503637961",
-    "url": "https://www.autohuoltomohe.fi",
-    "openingHoursSpecification": [
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"00:00","closes":"23:59","description":"La sopimuksesta"}
-    ],
-    "priceRange": "€€",
-    "sameAs": []
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "MoHe Autohuolto",
+  "description": "Nopea, reilu ja luotettava autohuolto Keravalla. Ystävällinen palvelu, selkeä hinnoittelu.",
+  "url": "https://www.autohuoltomohe.fi",
+  "telephone": "+358503637961",
+  "image": "https://www.autohuoltomohe.fi/assets/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Isokiventie 17, Halli A",
+    "addressLocality": "Kerava",
+    "postalCode": "04250",
+    "addressCountry": "FI"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+    /* Omit Saturday/Sunday entirely if closed */
+  ],
+  "priceRange": "€€",
+  "hasMap": "https://maps.google.com/?q=Isokiventie+17,+Halli+A,+04250+Kerava",
+  "sameAs": []
+}
+</script>
+
 </head>
 <body>
   <!-- ======= Header / Nav ======= -->
@@ -309,7 +316,8 @@
           <p class="muted" style="margin-top:10px">Tervetuloa – pihassa on helppo pysäköidä.</p>
         </div>
         <div>
-          <iframe class="map" title="MoHe Autohuolto kartalla" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=Isokiventie+17,+Halli+A,+04250+Kerava&output=embed"></iframe>
+          <iframe class="map" title="MoHe Autohuolto kartalla" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps?q=loc:60.374779043353, 25.10736184281118&z=16&output=embed"></iframe>
         </div>
       </div>
     </div>

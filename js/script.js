@@ -58,88 +58,72 @@ if (form) {
   });
 }
 
-// Testimonials auto-scroll & swipe
-// Testimonials auto-scroll & swipe (flicker-free)
+// Testimonials: no auto-scroll — only user-driven scroll/drag
 const carousel = document.getElementById('testimonialCarousel');
 
-if (carousel) {
-  let autoTimer = null;
-  let userActive = false;
-  let scrollDebounce = null;
+if (carousel)
+{
+    let userActive = false;
+    let scrollDebounce = null;
 
-  const STEP = () => Math.round(carousel.clientWidth * 0.9);
-  const MAX = () => carousel.scrollWidth - carousel.clientWidth;
+    const STEP = () => Math.round(carousel.clientWidth * 0.9);
+    const MAX = () => carousel.scrollWidth - carousel.clientWidth;
 
-  function startAuto() {
-    stopAuto();
-    autoTimer = setInterval(nextStep, 3500);
-  }
-  function stopAuto() {
-    if (autoTimer) clearInterval(autoTimer);
-    autoTimer = null;
-  }
-
-  function nextStep() {
-    if (userActive) return;
-
-    const max = MAX();
-    const next = Math.min(carousel.scrollLeft + STEP(), max);
-
-    // Smoothly move forward one step
-    carousel.scrollTo({ left: next, behavior: 'smooth' });
-
-    // If we hit (or nearly hit) the end, jump back to 0 without snap/animation
-    if (next >= max - 2) {
-      // wait for the smooth scroll to finish, then jump to 0 without snapping
-      setTimeout(() => {
-        carousel.classList.add('no-snap');
-        carousel.scrollTo({ left: 0, behavior: 'auto' });
-        // tiny delay to let layout settle, then re-enable snapping
-        setTimeout(() => carousel.classList.remove('no-snap'), 40);
-      }, 450);
+    function markActive()
+    {
+        userActive = true;
     }
-  }
 
-  // Pause auto while the user interacts / momentum is active
-  function markActive() {
-    userActive = true;
-    stopAuto();
-  }
-  function unmarkActiveSoon() {
-    if (scrollDebounce) clearTimeout(scrollDebounce);
-    scrollDebounce = setTimeout(() => {
-      userActive = false;
-      startAuto();
-    }, 250); // wait for momentum scrolling to end
-  }
+    function unmarkActiveSoon()
+    {
+        if (scrollDebounce) clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(() =>
+        {
+            userActive = false;
+        }, 250); // wait for momentum scrolling to end
+    }
 
-  // Pointer drag to scroll
-  let isDown = false, startX = 0, startLeft = 0;
-  carousel.addEventListener('pointerdown', (e) => {
-    isDown = true; carousel.setPointerCapture(e.pointerId);
-    startX = e.pageX - carousel.offsetLeft;
-    startLeft = carousel.scrollLeft;
-    markActive();
-  });
-  carousel.addEventListener('pointermove', (e) => {
-    if (!isDown) return;
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX);
-    carousel.scrollLeft = startLeft - walk;
-  });
-  ['pointerup','pointerleave','pointercancel'].forEach(ev => {
-    carousel.addEventListener(ev, () => { isDown = false; unmarkActiveSoon(); });
-  });
+    // Pointer drag to scroll (left/right)
+    let isDown = false;
+    let startX = 0;
+    let startLeft = 0;
 
-  // If user scrolls via flick momentum/touch, debounce it
-  carousel.addEventListener('scroll', () => {
-    if (!userActive) return;      // only when user started it
-    unmarkActiveSoon();
-  }, { passive: true });
+    carousel.addEventListener('pointerdown', (e) =>
+    {
+        isDown = true;
+        carousel.setPointerCapture(e.pointerId);
+        startX = e.pageX - carousel.offsetLeft;
+        startLeft = carousel.scrollLeft;
+        markActive();
+    });
 
-  // Kick things off
-  startAuto();
+    carousel.addEventListener('pointermove', (e) =>
+    {
+        if (!isDown) return;
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX);
+        carousel.scrollLeft = startLeft - walk;
+    });
+
+    ['pointerup','pointerleave','pointercancel'].forEach(ev =>
+    {
+        carousel.addEventListener(ev, () =>
+        {
+            isDown = false;
+            unmarkActiveSoon();
+        });
+    });
+
+    // If user scrolls via flick momentum/touch, debounce it
+    carousel.addEventListener('scroll', () =>
+    {
+        if (!userActive) return; // only debounces when user started it
+        unmarkActiveSoon();
+    }, { passive: true });
+
+    // No automatic startAuto() call — carousel will not move by itself.
 }
+
 // Mobile menu toggle
 const menuBtn   = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
